@@ -1,5 +1,5 @@
 def getStartTime(m):
-    start_second_input = m
+    start_second_input = m * 5
     start_hour = start_second_input // 3600
     start_hour1 = start_second_input % 3600
     start_minute = start_hour1 // 60
@@ -8,7 +8,7 @@ def getStartTime(m):
     return subtitle_start_time
 
 def getEndTime(m,time_diff):
-    end_second_input = m + time_diff
+    end_second_input = (m * 5) + time_diff
     end_hour = end_second_input // 3600
     end_hour1 = end_second_input % 3600
     end_minute = end_hour1 // 60

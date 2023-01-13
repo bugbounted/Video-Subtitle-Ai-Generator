@@ -1,5 +1,5 @@
 from stratTimeEndTime import getStartTime,getEndTime
-
+import os
 def getWriteVttFile(m,text,videoDuration,videoTimeDiff,saveFileName):
     try:
         if text is None:
@@ -7,7 +7,7 @@ def getWriteVttFile(m,text,videoDuration,videoTimeDiff,saveFileName):
         else:
             startTime = getStartTime(m)
             endTime = getEndTime(m, videoTimeDiff)
-            empolyee_file = open(f"{saveFileName}.vtt", "a",encoding='utf8')
+            empolyee_file = open(f"{saveFileName}.vtt", "a", encoding='utf8')
             empolyee_file.write(f"{startTime} --> {endTime}")
             empolyee_file.write(f"\n{text}")
             empolyee_file.write("\n")

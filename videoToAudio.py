@@ -1,6 +1,6 @@
 import moviepy.editor
 from tkinter.filedialog import *
-
+import os
 video = askopenfilename()
 video = moviepy.editor.VideoFileClip(video)
 video_duration = video.duration
@@ -23,6 +23,13 @@ def getVideoToAudio():
             end = (m * 5) + (video_duration % 5)
             subClip = audio.subclip(start, end)
             subClip.write_audiofile(f"{m}.wav")
+
+def getWriteVttFileIntro(saveFileName,outputlan):
+    empolyee_file = open(f"{saveFileName}.vtt", "a", encoding='utf8')
+    empolyee_file.write("WEBVTT\n")
+    empolyee_file.write("Kind: subtitle\n")
+    empolyee_file.write(f"language: {outputlan} \n")
+    empolyee_file.write("\n")
 
 def getVideoDuration():
     return video_duration

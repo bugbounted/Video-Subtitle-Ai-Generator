@@ -14,6 +14,3 @@ def getAudioToText(m,inputlan):
             return text
     except speech_recognition.UnknownValueError:
         print("Can't Read The File")
-    # except:
-    #     getDeleteFile(number)
-    #     print("error")
