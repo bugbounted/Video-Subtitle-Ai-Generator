@@ -1,14 +1,14 @@
-FROM python:3
+FROM mcr.microsoft.com/playwright/python:v1.29.0-focal
 
-WORKDIR /usr/src/app
+RUN pip install --upgrade pip
 
 RUN apt-get update -y && \
-    sudo apt-get install -y portaudio19-dev
+    apt-get install -y portaudio19-dev
 
-COPY requirements.txt ./
+RUN mkdir /app
+ADD . /app
+WORKDIR /app
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-
-COPY . .
-
-CMD [ "python", "./main.py" ]
+CMD ["python3", "main.py"]
