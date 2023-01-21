@@ -4,7 +4,7 @@ RUN pip install --upgrade pip
 
 RUN apt-get update -y && \
     apt-get install -y portaudio19-dev && \
-    apt-get install python3-tk
+    apt-get install python3-tk -y
 
 RUN mkdir /app
 ADD . /app
