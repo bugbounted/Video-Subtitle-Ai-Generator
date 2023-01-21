@@ -3,7 +3,8 @@ FROM mcr.microsoft.com/playwright/python:v1.29.0-focal
 RUN pip install --upgrade pip
 
 RUN apt-get update -y && \
-    apt-get install -y portaudio19-dev
+    apt-get install -y portaudio19-dev && \
+    apt-get install python3-tk
 
 RUN mkdir /app
 ADD . /app
