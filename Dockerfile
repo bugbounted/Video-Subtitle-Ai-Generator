@@ -2,10 +2,12 @@ FROM python:3
 
 WORKDIR /usr/src/app
 
+RUN apt-get update -y && \
+    sudo apt-get install -y portaudio19-dev
+
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN apt install portaudio19-dev
 
 COPY . .
 
